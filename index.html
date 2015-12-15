@@ -137,6 +137,36 @@ mkdir build &amp;&amp; cd build &amp;&amp; cmake ../src &amp;&amp; make &amp;&am
 
 <p><img src="https://raw.githubusercontent.com/venkyman/graphics-projectwriteup/gh-pages/images/Barnsley-WithSupersampling.png" alt=""></p>
 
+<h3>
+<a id="custom-fractal-1---repulse" class="anchor" href="#custom-fractal-1---repulse" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Fractal 1 - Repulse</h3>
+
+<h4>
+<a id="mathintuition" class="anchor" href="#mathintuition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math/Intuition</h4>
+
+<p>In the Sierpinksi triangle, at each plotted sample P, we moved to the midpoint of the line joining P and a randomly selected vertex V to get the next point. In other words, the new point was computed as (P + V) / 2. Let us say we want to move outside the vertex by the same distance, instead of moving to the midpoint. That is, we move P to V + (V - ((P + V) / 2)) to get the new point. In short, the new P can be computed as 3V/2 - P/2. In this case we would expect the three smaller triangles inside a large triangle to be outside the vertices. This is true for every smaller triangle inside the other smaller triangles as well. As you can see from the outputs, my intuition proved right! Hurray :)</p>
+
+<h4>
+<a id="parameters-2" class="anchor" href="#parameters-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h4>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">fractal</span> <span class="pl-e">iterations</span>=<span class="pl-s"><span class="pl-pds">"</span>1000000<span class="pl-pds">"</span></span> <span class="pl-e">fill</span>=<span class="pl-s"><span class="pl-pds">"</span>#8A0829<span class="pl-pds">"</span></span>&gt;
+  <span class="pl-c">&lt;!-- A variation of Sierpinski triangle with coordinates (300, 700), (700, 700) and (500, 346.41) and seed point (500, 582.14).</span>
+<span class="pl-c">       Instead of moving half way towards a selected vertex, we move the same distance outside the vertex.--&gt;</span>
+  &lt;<span class="pl-ent">seed</span> <span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span> <span class="pl-e">y</span>=<span class="pl-s"><span class="pl-pds">"</span>582.14<span class="pl-pds">"</span></span>/&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.3333<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.5<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>450<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>1050<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.3333<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.5<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>1050<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>1050<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.3333<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.5<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>750<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>519.615<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">fractal</span>&gt;</pre></div>
+
+<h4>
+<a id="without-supersampling-2" class="anchor" href="#without-supersampling-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Without Supersampling</h4>
+
+<p><img src="https://raw.githubusercontent.com/venkyman/graphics-projectwriteup/gh-pages/images/Repulse-WithoutSupersampling.png" alt=""></p>
+
+<h4>
+<a id="with-16x-supersampling-2" class="anchor" href="#with-16x-supersampling-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>With 16x Supersampling</h4>
+
+<p><img src="https://raw.githubusercontent.com/venkyman/graphics-projectwriteup/gh-pages/images/Repulse-WithSupersampling.png" alt=""></p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/venkyman/graphics-projectwriteup">Computer Graphics - Iterated Function Systems</a> is maintained by <a href="https://github.com/venkyman">venkyman</a>.</span>
 
