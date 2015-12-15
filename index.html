@@ -167,6 +167,35 @@ mkdir build &amp;&amp; cd build &amp;&amp; cmake ../src &amp;&amp; make &amp;&am
 
 <p><img src="https://raw.githubusercontent.com/venkyman/graphics-projectwriteup/gh-pages/images/Repulse-WithSupersampling.png" alt=""></p>
 
+<h3>
+<a id="custom-fractal-2---tower" class="anchor" href="#custom-fractal-2---tower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Fractal 2 - Tower</h3>
+
+<h4>
+<a id="mathintuition-1" class="anchor" href="#mathintuition-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math/Intuition</h4>
+
+<p>In the Sierpinksi triangle, each vertex had an equal chance of getting chosen. Let us say we want to use unequal probabilities. My goal was to modify the parameters to mutate the Sierpinski triangle into something that looks like the Eifel tower. To achieve that, we want the triangles to be elongated along the vertical axis. Hence, I increased the probability of choosing the top vertex from 1/3 to 2/3. The other two vertices had their probabilities of getting chosen reduced from 1/3 to 1/6 each. Also, instead of moving to the midpoint in the y-direction, I moved by 0.7 (instead of 0.5) of the current point P's y coordinate if the top vertex is chosen. If one of the two bottom vertices were chosen, then the point P's y-coordinate is only moved by 0.35 (instead of 0.5) of itself. This allows the point to stay in the top region for longer, this created a tower like figure. The results can be seen below.</p>
+
+<h4>
+<a id="parameters-3" class="anchor" href="#parameters-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h4>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">fractal</span> <span class="pl-e">iterations</span>=<span class="pl-s"><span class="pl-pds">"</span>1000000<span class="pl-pds">"</span></span> <span class="pl-e">fill</span>=<span class="pl-s"><span class="pl-pds">"</span>#2F0B3A<span class="pl-pds">"</span></span>&gt;
+  <span class="pl-c">&lt;!-- A Tower with coordinates (200, 1000), (800, 1000) and (500, 0) and seed point (500, 666.67) --&gt;</span>
+  &lt;<span class="pl-ent">seed</span> <span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span> <span class="pl-e">y</span>=<span class="pl-s"><span class="pl-pds">"</span>666.67<span class="pl-pds">"</span></span>/&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.1666<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>0.35<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.1666<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>0.35<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.6666<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>0.7<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>250<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">fractal</span>&gt;</pre></div>
+
+<h4>
+<a id="without-supersampling-3" class="anchor" href="#without-supersampling-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Without Supersampling</h4>
+
+<p><img src="https://raw.githubusercontent.com/venkyman/graphics-projectwriteup/gh-pages/images/Tower-WithoutSupersampling.png" alt=""></p>
+
+<h4>
+<a id="with-16x-supersampling-3" class="anchor" href="#with-16x-supersampling-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>With 16x Supersampling</h4>
+
+<p><img src="https://raw.githubusercontent.com/venkyman/graphics-projectwriteup/gh-pages/images/Tower-WithSupersampling.png" alt=""></p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/venkyman/graphics-projectwriteup">Computer Graphics - Iterated Function Systems</a> is maintained by <a href="https://github.com/venkyman">venkyman</a>.</span>
 
