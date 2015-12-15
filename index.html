@@ -74,6 +74,33 @@ mkdir build &amp;&amp; cd build &amp;&amp; cmake ../src &amp;&amp; make &amp;&am
 <pre lang="code"><code>./drawsvg ../svg/tower.svg
 </code></pre>
 
+<h2>
+<a id="outputs" class="anchor" href="#outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Outputs</h2>
+
+<h3>
+<a id="sierpinski-triangle" class="anchor" href="#sierpinski-triangle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sierpinski Triangle</h3>
+
+<h4>
+<a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h4>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">fractal</span> <span class="pl-e">iterations</span>=<span class="pl-s"><span class="pl-pds">"</span>1000000<span class="pl-pds">"</span></span> <span class="pl-e">fill</span>=<span class="pl-s"><span class="pl-pds">"</span>#0B0B61<span class="pl-pds">"</span></span>&gt;
+  <span class="pl-c">&lt;!-- A Sierpinski triangle with coordinates (200, 800), (800, 800) and (500, 280.38) and seed point (500, 626.79) --&gt;</span>
+  &lt;<span class="pl-ent">seed</span> <span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span> <span class="pl-e">y</span>=<span class="pl-s"><span class="pl-pds">"</span>626.79<span class="pl-pds">"</span></span>/&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.3333<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.3333<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">transformation</span> <span class="pl-e">prob</span>=<span class="pl-s"><span class="pl-pds">"</span>0.3333<span class="pl-pds">"</span></span> <span class="pl-e">a</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">b</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">c</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">d</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> <span class="pl-e">e</span>=<span class="pl-s"><span class="pl-pds">"</span>250<span class="pl-pds">"</span></span> <span class="pl-e">f</span>=<span class="pl-s"><span class="pl-pds">"</span>140.19<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">fractal</span>&gt;</pre></div>
+
+<h4>
+<a id="without-supersampling" class="anchor" href="#without-supersampling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Without Supersampling</h4>
+
+<p><img src="https://github.com/venkyman/graphics-projectwriteup/blob/gh-pages/images/Sierpinski-WithoutSupersampling.png" alt=""></p>
+
+<h4>
+<a id="with-16x-supersampling" class="anchor" href="#with-16x-supersampling" aria-hidden="true"><span class="octicon octicon-link"></span></a>With 16x Supersampling</h4>
+
+<p><img src="https://github.com/venkyman/graphics-projectwriteup/blob/gh-pages/images/Sierpinski-WithSupersampling.png" alt=""></p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/venkyman/graphics-projectwriteup">Computer Graphics - Iterated Function Systems</a> is maintained by <a href="https://github.com/venkyman">venkyman</a>.</span>
 
