@@ -45,7 +45,7 @@
 <li>I implemented Irradiance Caching as advised in the handout by interpolating the relative energies for each transformed point upon their four neighboring pixels. The rendered outputs in the following sections use Irradiance Caching. For instance, in the Barnsley Fern fractal image, the tips of the leaves are brighter than the portions near the stem. This is because the tips of the leaves are very dense.</li>
 <li>I also adapted <strong>supersampling</strong> from assignment 1 to prevent spatial aliasing. Without supersampling (as you can see in the outputs below), the stem of the Barnsley Fern looked rugged due to aliasing. Supersampling got rid of the aliasing . However, it also made the stem narrower.</li>
 <li>I also colored the fractal images. The color is supplied by the user as a parameter in the svg file.</li>
-<li>I implemented a <strong>distance function</strong> using a BFS approach that captured the Manhattan distance between each background sample from the closest foreground sample. This was used to mix the supplied foreground color and white so that samples close to the foreground are closer to white and those that are farther are closer to the foreground color.</li>
+<li>I implemented a <strong>distance function</strong> using a BFS approach that captured the Manhattan distance between each background sample from the closest foreground sample. This was used to mix the supplied foreground color and white so that samples close to the foreground are closer to white and those that are farther away are closer to the foreground color.</li>
 <li>I also formulated my own IFS parameters to generate two new fractal images. The math/intuition behind them and the outputs can be found in the following sections.</li>
 </ol>
 
